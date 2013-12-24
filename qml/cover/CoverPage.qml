@@ -36,7 +36,7 @@ CoverBackground {
     Item {
         id:ninjalogo
         property alias icon: image
-        property string eyecolor: '#ff0000' //transparent is a good default value
+        property string eyecolor: 'transparent' //transparent is a good default value
         width:parent.width
         y: Theme.paddingLarge
         Item {
