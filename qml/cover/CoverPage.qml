@@ -33,29 +33,51 @@ import Sailfish.Silica 1.0
 
 CoverBackground {
 
+    Item {
+        id:ninjalogo
+        property alias icon: image
+        property string eyecolor: 'transparent' //transparent is a good default value
+        width:parent.width
+        y: Theme.paddingLarge
+        Item {
+            width:image.width
+            height:image.height
+            anchors.horizontalCenter: parent.horizontalCenter
 
-    CoverPlaceholder {
-        text: "Ninjafish"
-        anchors.centerIn: parent
-        icon.source: "coverimage.png"
+            Image {
+                anchors.horizontalCenter: parent.horizontalCenter
+                opacity: 0.4
+                id: image
+                source: "../cover/coverimage.png"
+            }
+
+            GlassItem {
+                visible: ninjalogo.eyecolor !=='transparent'
+                color: ninjalogo.eyecolor
+                width:image.width * 0.25
+                height:image.height * 0.25
+                x:image.width * 0.14
+                y:image.height * 0.58
+                cache: false
+
+                falloffRadius: 0.25
+                radius: 0.3
+            }
+            GlassItem {
+
+                visible: ninjalogo.eyecolor !=='transparent'
+                color: ninjalogo.eyecolor
+                width:image.width * 0.26
+                height:image.height * 0.25
+                x:image.width * 0.51
+                y:image.height * 0.58
+                cache: false
+
+                falloffRadius: 0.25
+                radius: 0.3
+            }
+        }
+
     }
-//    Label {
-//        id: label
-//        anchors.centerIn: parent
-//        text: "My Cover"
-//    }
 
-//    CoverActionList {
-//        id: coverAction
-
-//        CoverAction {
-//            iconSource: "image://theme/icon-cover-next"
-//        }
-
-//        CoverAction {
-//            iconSource: "image://theme/icon-cover-pause"
-//        }
-//    }
 }
-
-
