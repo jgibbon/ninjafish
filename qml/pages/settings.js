@@ -44,8 +44,9 @@ function settings(LocalStorage) {
     var ret = {
         settings: {
             clear: function() {
-                clearSettings();
                 ret.favourites.clear();
+                ret.hiddendevices.clear();
+                clearSettings();
             },
 
             set: function(key, value) {

@@ -30,4 +30,7 @@ OTHER_FILES += qml/Ninjafish.qml \
     qml/pages/OAuth.qml \
     qml/pages/DeviceListItem.qml \
     qml/pages/HiddenDeviceList.qml \
-    qml/pages/FavouriteDeviceList.qml
+    qml/pages/FavouriteDeviceList.qml \
+    qml/pages/NamedColorPicker.qml \
+    qml/cover/coverimage_black.png \
+    qml/cover/coverimage_white.png

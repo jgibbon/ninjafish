@@ -7,6 +7,9 @@ Item {
             width: listView.width
             height: visible && devicelistitem.menuOpened ? menurowbackground.height + devicerow.height : devicerow.height
 
+            RemorseItem {
+				id: remorse
+            }
             property bool menuOpened: false
             property bool isHidden: false
 
@@ -91,7 +94,6 @@ Item {
                 onClicked: {
                     devicelistitem.menuOpened = false
                 }
-                RemorseItem { id: remorse }
                 id:menurowbackground
                 anchors.top: devicerowbackground.bottom
                 height: menurow.height * 1.2
@@ -159,11 +161,11 @@ Item {
                             checked = devicelistitem.isHidden;
                         }
                         onClicked: {
-                            //checked = !checked;
-                            remorse.execute(menurowbackground, (checked?"Hiding ":"Un-hiding ")+model.shortName, function() {
+                            checked = !checked;
+                            remorse.execute(devicelistitem, (checked?"Un-hiding ":"Hiding ")+"'"+model.shortName+"'", function() {
                                 checked = devicelistitem.isHidden = mainPage.js.modules.hiddendevices.toggle({id:model.id,shortName:model.shortName});
                                 js.modules.loadDevices();
-                            });
+                            }, 2000);
                         }
                         icon.width: Theme.iconSizeSmall
                         icon.height: Theme.iconSizeSmall
@@ -184,7 +186,6 @@ Item {
 //                    }
                 }
             }
-
 
             Component.onCompleted: {
 

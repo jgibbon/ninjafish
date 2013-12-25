@@ -54,10 +54,8 @@ Page {
         var dev = js.modules.favourites.get(),
             subdevname;
 
-        console.log('adding favs')
         for( subdevname in dev) {
 
-            console.log(JSON.stringify(dev[subdevname]))
                 favouritedevicelistmodel.append(dev[subdevname]);
             }
         }

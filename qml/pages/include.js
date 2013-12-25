@@ -146,6 +146,5 @@ var modules = {};
             dialog.accepted.connect(function() {
                 callback(dialog.color);
             });
-            return;
     }
 }());
