@@ -24,7 +24,6 @@ Page {
                     js.modules.hiddendevices.clear();
                     hiddendevicelistmodel.clear();
                     js.modules.loadDevices();
-                    PageStack.pop();
                 }
             }
 
